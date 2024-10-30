@@ -8,5 +8,10 @@ sudo sh ./get-docker.sh
 
 git clone https://github.com/Sghowairi/capstone-project.git
 cd capstone-project
-echo "REDIS_HOST=${redis_host}" > .env
-docker compose up -d 
+echo "REDIS_HOST=${redis}" > .env
+echo "DB_HOST=${db}" >> .env
+echo "DB_PASSWORD=password" >> .env
+echo "DB_USER=user" >> .env
+echo "DB_NAME=mydatabase" >> .env
+docker pull shad3tb/flask
+docker run -p 80:5000 --env-file .env --name app shad3tb/flask

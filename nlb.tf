@@ -3,7 +3,7 @@ resource "alicloud_nlb_load_balancer" "http" {
   load_balancer_type = "Network"
   address_type       = "Internet"
   address_ip_version = "Ipv4"
-  vpc_id             = alicloud_vpc.vpc2.id
+  vpc_id             = alicloud_vpc.capstone-vpc.id
   zone_mappings {
     vswitch_id = alicloud_vswitch.publicv.id
     zone_id      = data.alicloud_zones.default.zones.0.id
@@ -18,7 +18,7 @@ resource "alicloud_nlb_load_balancer" "http" {
 resource "alicloud_nlb_server_group" "http-server" {
   server_group_name        = "http"
   server_group_type        = "Instance"
-  vpc_id                   = alicloud_vpc.vpc2.id
+  vpc_id                   = alicloud_vpc.capstone-vpc.id
   scheduler                = "rr"
   protocol                 = "TCP"
   connection_drain_enabled = true

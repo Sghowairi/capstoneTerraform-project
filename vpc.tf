@@ -59,7 +59,7 @@ resource "alicloud_snat_entry" "snat" {
 
 resource "alicloud_route_table" "privateroute" {
   description      = "test-description"
-  vpc_id           = alicloud_vpc.vpc2.id
+  vpc_id           = alicloud_vpc.capstone-vpc.id
   route_table_name = "privateroute"
   associate_type   = "VSwitch"
 }
