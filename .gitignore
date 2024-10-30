@@ -3,3 +3,6 @@ key.pem
 ip
 .terraform.lock.hcl
 .terraform
+terraform.tfstate
+terraform.tfstate.backup
+keycapstone.pem
