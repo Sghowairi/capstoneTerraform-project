@@ -2,3 +2,4 @@ terraform.tfvars
 key.pem
 ip
 .terraform.lock.hcl
+.terraform
